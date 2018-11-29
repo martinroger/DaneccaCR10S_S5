@@ -978,7 +978,7 @@
 /**
  * Bed Probe dependencies
  */
- 
+//Danecca change flag - was it where the modification was done ? 
 #if ENABLED(FIX_MOUNTED_PROBE)
   #undef Z_MIN_PROBE_ENDSTOP_INVERTING
   #define Z_MIN_PROBE_ENDSTOP_INVERTING false

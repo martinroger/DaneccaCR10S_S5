@@ -820,6 +820,7 @@
 
 #endif //end CR-10
 
+//Danecca change flag : this is the juicy bit for firmware-limited jerk and acceleration
 //CR-10S Model Settings
 #if ENABLED(CR10S) || ENABLED(CR10S_MINI) || ENABLED(CR10S_S4) || ENABLED(CR10S_S5) || ENABLED(ENDER3_DUALBOARD)
 #define BAUDRATE 115200
@@ -840,7 +841,7 @@
 #define X_MAX_ENDSTOP_INVERTING true
 #define Y_MAX_ENDSTOP_INVERTING true
 #define Z_MAX_ENDSTOP_INVERTING true
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false //Danecca change flag : this may be needed to modify, or see further down
 
 
 #if ENABLED(TITAN_EXTRUDER)
@@ -852,7 +853,7 @@
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
 #endif
 #endif
-
+//Danecca change flag : we should lock max acceleration and Y jerk in this section
 #define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 50 }
 #define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000 }
 
@@ -904,6 +905,20 @@
 #define X_BED_SIZE 500
 #define Y_BED_SIZE 500
 #define Z_MAX_POS 500
+//Danecca change flag : we should re-define Acceleration and jerk max settings here with a undef and define
+//#undef DEFAULT_MAX_FEEDRATE
+//#undef DEFAULT_MAX_ACCELERATION
+//#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 50 }
+//#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000 }
+//#undef DEFAULT_ACCELERATION
+//#undef DEFAULT_TRAVEL_ACCELERATION
+//#define DEFAULT_ACCELERATION          500
+//#define DEFAULT_TRAVEL_ACCELERATION   500
+//
+//#undef DEFAULT_XJERK
+//#undef DEFAULT_YJERK
+//#define DEFAULT_XJERK                 10.0
+//#define DEFAULT_YJERK                 10.0
 #endif
 
 #if ENABLED(ENDER3_DUALBOARD)
@@ -1720,7 +1735,7 @@
 #define MAX_SOFTWARE_ENDSTOP_Y
 #define MAX_SOFTWARE_ENDSTOP_Z
 #endif
-
+//Danecca change flag : we have to check with M119 that we don't need inverting there
 #if ENABLED(EZOUT_ENABLE) || ENABLED(EZOUTV2_ENABLE) || (ENABLED(CR10S) && DISABLED(CR10S_NOFILAMENTSENSOR)) || (ENABLED(CR10S_MINI) && DISABLED(CR10S_NOFILAMENTSENSOR))  || (ENABLED(CR10S_S4) && DISABLED(CR10S_NOFILAMENTSENSOR)) || (ENABLED(CR10S_S5) && DISABLED(CR10S_NOFILAMENTSENSOR)) || ENABLED(ALFAWISE_U10)
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)

@@ -143,6 +143,7 @@
 //#define CR10S
 //#define CR10S_MINI
 //#define CR10S_S4
+//Danecca change flag
 #define CR10S_S5
 
 // This disables the stock CR-10S Filament Sensor
@@ -167,11 +168,13 @@
 //#define CR10_OEM
 //#define TM3DAERO
 //#define TM3DAERO_EXTENDED
+//Danecca change flag
 #define PETSFANG  //This is the RIGHT mounted version - if using the left mount please use the CUSTOM_PROBE option.
 //#define CUSTOM_PROBE
 
 // Touch LCD Setting - Enable this if you have the touch LCD are are getting a "paused for user" message in the terminal window.
 //#define TOUCH_LCD_FIX
+//Leave disabled. Essentially this lets the LCD handle the filament sensor and systematically hangs prints at the beginning
 
 // Dual Extruder Board Options - The below options are for use with the TH3D CR-10S Board with dual extruder support.
 
@@ -375,6 +378,7 @@
 
 // If you want more or less EZABL probe points change the number below (only used if EZABL enabled)
 // Default is 3 which gives you 3x3 grid for a total of 9 points. STICK WITH ODD NUMBERS
+//Danecca change flag
 #define EZABL_POINTS 7
 
 // If you want to probe in on the bed more than 15mm change this below. 
@@ -383,6 +387,7 @@
 // You can do down to 10mm on the Wanhao i3 since it cannot print on the entire bed.
 // You can do down to 5mm on the Wanhao i3 Mini since it cannot print on the entire bed.
 // (only used if EZABL enabled)
+//Danecca change flag
 #define EZABL_PROBE_EDGE 50
 
 // If you want to speed up the probing process you can try using the Fast Probe option
@@ -531,6 +536,7 @@
 
 // These are new motion control options for jerk and acceleration.
 // These are very new features so if you notice issues disable them. 
+// Danecca flag : we should try those ?
 //#define NEW_JERK_CONTROL
 //#define NEW_ACCELERATION_CONTROL
 
