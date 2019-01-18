@@ -854,15 +854,15 @@
 #endif
 #endif
 //Danecca change flag : we should lock max acceleration and Y jerk in this section
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 50 }
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 15, 50 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
 
 #define DEFAULT_ACCELERATION          500
 #define DEFAULT_RETRACT_ACCELERATION  1000
 #define DEFAULT_TRAVEL_ACCELERATION   500
 
-#define DEFAULT_XJERK                 10.0
-#define DEFAULT_YJERK                 10.0
+#define DEFAULT_XJERK                 8
+#define DEFAULT_YJERK                 7.0
 #define DEFAULT_ZJERK                  0.4
 #define DEFAULT_EJERK                  5.0
 

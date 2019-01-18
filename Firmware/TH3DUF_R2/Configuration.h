@@ -537,8 +537,9 @@
 // These are new motion control options for jerk and acceleration.
 // These are very new features so if you notice issues disable them. 
 // Danecca flag : we should try those ?
-//#define NEW_JERK_CONTROL
-//#define NEW_ACCELERATION_CONTROL
+// Activated 18/01/2019
+#define NEW_JERK_CONTROL
+#define NEW_ACCELERATION_CONTROL
 
 //================================================================================================
 // Language - This is provided for convenience and is unsupported with included product support.
