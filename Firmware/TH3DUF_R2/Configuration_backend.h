@@ -855,14 +855,14 @@
 #endif
 //Danecca change flag : we should lock max acceleration and Y jerk in this section
 #define DEFAULT_MAX_FEEDRATE          { 400, 400, 15, 50 }
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 300, 250, 100, 5000 }
 
-#define DEFAULT_ACCELERATION          500
+#define DEFAULT_ACCELERATION          300
 #define DEFAULT_RETRACT_ACCELERATION  1000
-#define DEFAULT_TRAVEL_ACCELERATION   500
+#define DEFAULT_TRAVEL_ACCELERATION   400
 
-#define DEFAULT_XJERK                 8
-#define DEFAULT_YJERK                 7.0
+#define DEFAULT_XJERK                 5
+#define DEFAULT_YJERK                 4
 #define DEFAULT_ZJERK                  0.4
 #define DEFAULT_EJERK                  5.0
 
@@ -904,7 +904,7 @@
 #if ENABLED(CR10S_S5)
 #define X_BED_SIZE 500
 #define Y_BED_SIZE 500
-#define Z_MAX_POS 500
+#define Z_MAX_POS 490
 //Danecca change flag : we should re-define Acceleration and jerk max settings here with a undef and define
 //#undef DEFAULT_MAX_FEEDRATE
 //#undef DEFAULT_MAX_ACCELERATION
@@ -1144,7 +1144,7 @@
 
 #define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves  
+#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
 
 #define DEFAULT_XJERK                  8.0
 #define DEFAULT_YJERK                  8.0
