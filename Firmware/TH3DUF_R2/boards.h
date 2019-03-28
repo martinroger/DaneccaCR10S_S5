@@ -79,6 +79,7 @@
 #define BOARD_TRIGORILLA_13     343   // TriGorilla Anycubic version 1.3 based on RAMPS EFB
 #define BOARD_TRIGORILLA_14     443   // TriGorilla Anycubic version 1.4 based on RAMPS EFB
 #define BOARD_RAMPS_ENDER_4     243   // Creality: Ender-4, CR-8
+#define BOARD_HJC2560C_REV2      99   // HengJianChuang HCMaker7
 
 //
 // Other ATmega1280, ATmega2560
@@ -105,8 +106,8 @@
 #define BOARD_GT2560_REV_A      74    // Geeetech GT2560 Rev. A
 #define BOARD_GT2560_REV_A_PLUS 75    // Geeetech GT2560 Rev. A+ (with auto level probe)
 #define BOARD_CR10S             476   // Creality CR-10S Board
-#define	BOARD_ONEPLUS1_wanhao	  511   // Wanhao i3 Mini Board
-#define BOARD_RAMPSPLUS2		    512	  // Alfawise U10 RampsPlus2 Board
+#define	BOARD_ONEPLUS1_wanhao	511   // Wanhao i3 Mini Board
+#define BOARD_RAMPSPLUS2		512	  // Alfawise U10 RampsPlus2 Board
 #define BOARD_GT2560_REV_B      600   // Geeetech GT2560 Rev. B
 
 //

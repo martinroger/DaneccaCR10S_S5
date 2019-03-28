@@ -375,10 +375,10 @@
   #define MSG_LED_CONTROL                     _UxGT("LED Control")
 #endif
 #ifndef MSG_LEDS
-  #define MSG_LEDS                            _UxGT("Lights")
+  #define MSG_LEDS                            _UxGT("LEDs")
 #endif
 #ifndef MSG_LED_PRESETS
-  #define MSG_LED_PRESETS                     _UxGT("Light Presets")
+  #define MSG_LED_PRESETS                     _UxGT("LED Presets")
 #endif
 #ifndef MSG_SET_LEDS_RED
   #define MSG_SET_LEDS_RED                    _UxGT("Red")
@@ -408,7 +408,7 @@
   #define MSG_SET_LEDS_DEFAULT                _UxGT("Default")
 #endif
 #ifndef MSG_CUSTOM_LEDS
-  #define MSG_CUSTOM_LEDS                     _UxGT("Custom Lights")
+  #define MSG_CUSTOM_LEDS                     _UxGT("Custom Color")
 #endif
 #ifndef MSG_INTENSITY_R
   #define MSG_INTENSITY_R                     _UxGT("Red Intensity")
@@ -646,7 +646,7 @@
   #define MSG_RESTORE_FAILSAFE                _UxGT("Restore failsafe")
 #endif
 #ifndef MSG_INIT_EEPROM
-  #define MSG_INIT_EEPROM                     _UxGT("Initialize EEPROM")
+  #define MSG_INIT_EEPROM                     _UxGT("Reset EEPROM")
 #endif
 #ifndef MSG_REFRESH
   #define MSG_REFRESH                         _UxGT("Refresh")

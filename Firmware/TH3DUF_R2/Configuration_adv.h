@@ -26,6 +26,17 @@
 #define CONFIGURATION_ADV_H
 #define CONFIGURATION_ADV_H_VERSION 010109
 
+#if ENABLED(TH3D_RGB_STRIP)
+  #define LED_CONTROL_MENU
+  #define LED_COLOR_PRESETS                 // Enable the Preset Color menu option
+  #define LED_USER_PRESET_RED        130  // User defined RED value
+  #define LED_USER_PRESET_GREEN      203  // User defined GREEN value
+  #define LED_USER_PRESET_BLUE       225  // User defined BLUE value
+  #define LED_USER_PRESET_WHITE      0  // User defined WHITE value
+  #define LED_USER_PRESET_BRIGHTNESS 255  // User defined intensity
+  #define LED_USER_PRESET_STARTUP       // Have the printer display the user preset color on startup
+#endif
+
 #if DISABLED(PIDTEMPBED)
   #define BED_CHECK_INTERVAL 500
   #if ENABLED(BED_LIMIT_SWITCHING)
@@ -111,15 +122,25 @@
     #endif
   #endif
 #else
-  #if ENABLED(TIM_I3MINI)
+  #if ENABLED(I3MINI_FANCONTROL)
     #define E0_AUTO_FAN_PIN 12
     #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
     #define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
+  #elif ENABLED(TH3D_EZ300)
+    #define E0_AUTO_FAN_PIN 7
+    #define EXTRUDER_AUTO_FAN_TEMPERATURE 40
+    #define EXTRUDER_AUTO_FAN_SPEED   255
   #else  
     #define E0_AUTO_FAN_PIN -1
     #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
     #define EXTRUDER_AUTO_FAN_SPEED   255  
   #endif
+#endif
+#if ENABLED(TH3D_EZ300)
+  #define USE_CONTROLLER_FAN
+  #define CONTROLLER_FAN_PIN 5
+  #define CONTROLLERFAN_SECS 60
+  #define CONTROLLERFAN_SPEED 145
 #endif
 
 #if ENABLED(DY_H9)
@@ -136,7 +157,13 @@
 #define X_HOME_BUMP_MM 5
 #define Y_HOME_BUMP_MM 5
 #define Z_HOME_BUMP_MM 2
-#define HOMING_BUMP_DIVISOR { 2, 2, 4 }  
+
+#if ENABLED(SLOWER_HOMING)
+  #define HOMING_BUMP_DIVISOR { 5, 5, 4 }
+#else
+  #define HOMING_BUMP_DIVISOR { 2, 2, 4 }
+#endif
+
 #define QUICK_HOME                    
 
 #define AXIS_RELATIVE_MODES {false, false, false, false}
@@ -164,9 +191,11 @@
 #define SLOWDOWN
 #define MINIMUM_PLANNER_SPEED 0.05
 
-#if ENABLED(NEW_JERK_CONTROL) && DISABLED(POWER_LOSS_RECOVERY)
-  #define JUNCTION_DEVIATION
-  #define JUNCTION_DEVIATION_MM 0.02
+#if DISABLED(JUNCTION_DEVIATION_DISABLE)
+  #if DISABLED(POWER_LOSS_RECOVERY)
+    #define JUNCTION_DEVIATION
+    #define JUNCTION_DEVIATION_MM 0.02
+  #endif
 #endif
 
 /**
@@ -239,16 +268,21 @@
 
 #define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
-  #define BABYSTEP_INVERT_Z false    
-  #define BABYSTEP_MULTIPLICATOR 10  
-  #if ENABLED(BABYSTEP_OFFSET)
-    #define BABYSTEP_ZPROBE_OFFSET   
+  #define BABYSTEP_INVERT_Z false
+  #if ENABLED(FINE_BABYSTEPPING)
+    #define BABYSTEP_MULTIPLICATOR 1
+  #else
+    #define BABYSTEP_MULTIPLICATOR 10
+  #endif
+  #if ENABLED(EZABL_ENABLE) && DISABLED(LCD2004)
+    //#define BABYSTEP_ZPROBE_OFFSET   
+    //#define BABYSTEP_ZPROBE_GFX_OVERLAY
   #endif
   #define DOUBLECLICK_FOR_Z_BABYSTEPPING
   #define DOUBLECLICK_MAX_INTERVAL 2000 
   
-  #if ENABLED(BABYSTEP_OFFSET) && DISABLED(LCD2004)
-    #define BABYSTEP_ZPROBE_GFX_OVERLAY 
+  #if ENABLED(EZABL_ENABLE) && DISABLED(LCD2004)
+    //#define BABYSTEP_ZPROBE_OFFSET
   #endif
 #endif
 
