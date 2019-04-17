@@ -2037,7 +2037,7 @@
   #define Z_PROBE_OFFSET_RANGE_MAX  1  
   #define Z_MIN_PROBE_REPEATABILITY_TEST  
   #define Z_AFTER_PROBING           5
-  #define Z_PROBE_LOW_POINT         -3  
+  #define Z_PROBE_LOW_POINT         -5  
   #define AUTO_BED_LEVELING_BILINEAR
   #define Z_SAFE_HOMING
   #define GRID_MAX_POINTS_X EZABL_POINTS
